@@ -3,31 +3,45 @@ body{
     justify-self: center;
     align-items: center;
     flex-direction: column;
+    background-color: #FCAB64;
 }
 
 #gameBoard{
+    width: 65.25vw;
     display: flex;
     flex-direction: column;
+    background-color: #FCEFEF;
+    border-radius: 2.5vw;
+    margin: 2%;
+
 }
 
 .invisi{
     display: flex;
     flex-direction: row;
-    background-color: aqua;
+    
 }
 
 .card{
     height: 20vh;
+    min-height: 20vh;
     width: 10vw;
-    background-color: blue;
+    min-width: 10vw;
+    background-color: #FCD29F;
     margin: 2%;
+    border: 0.25vw solid #7FD8BE;
+    border-radius: 2.5vw;
 }
 
 #titleCard {
     height: 20dvh;
     width: 90vw;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
-    background-color: greenyellow;
-    border: 0.5vw solid black;
+    background-color: #A1FCDF;
+    border: 0.25vw solid #7FD8BE;
+    border-radius: 2.5vw;
 }
