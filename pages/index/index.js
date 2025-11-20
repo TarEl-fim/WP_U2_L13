@@ -6,3 +6,4 @@
             <div class="card"></div>
         </div> 
 ^^ card generation template ^^*/
+
