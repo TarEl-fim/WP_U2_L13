@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+#gameBoard{
+    display: flex;
+    flex-direction: column;
+}
+
+.invisi{
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+}
+
+.card{
+    height: 20vh;
+    width: 10vw;
+    background-color: blue;
+    margin: 2%;
+}
