@@ -1,14 +1,23 @@
-<!DOCTYPE html>
+body{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FCAB64;
+}
 
-<html>
-    <head>
-        <title>Rules</title>
-        <link href='rules.css' rel="stylesheet"/>
-    </head>
-    <body>
-        <h1>Rules:</h1>
-        <p>2 Players take turns flipping trying to match 2 cards with the same image (each match is +1 points)<br>The person with the most matches when the board is cleared wins!</p>
-        <h3>Possible Matches:</h3>
-        
-    </body>
-</html>
+#rules {
+    height: 80vh;
+    width: 80vw;
+    border: 1vw solid #7FD8BE;
+    border-radius: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+

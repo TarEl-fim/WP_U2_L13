@@ -1,4 +1,8 @@
 body{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
     display: flex;
     justify-self: center;
     align-items: center;
@@ -41,7 +45,7 @@ body{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    background-color: #A1FCDF;
+    background-color: #cdffef;
     border: 0.25vw solid #7FD8BE;
     border-radius: 2.5vw;
 }
