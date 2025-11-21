@@ -42,10 +42,10 @@ body{
     min-height: 20vh;
     width: 10vw;
     min-width: 10vw;
-    background-color: #FCD29F;
     margin: 2%;
     border: 0.25vw solid #7FD8BE;
     border-radius: 2.5vw;
+    background-position: center;
 }
 
 #titleCard {
@@ -62,31 +62,32 @@ body{
 }
 
 #img1 {
-    background-image: '../../resources/index/general.png';
+    background-image: url('resources/index/general.png');
 }
 #img2 {
-    background-image: '../../resources/index/leaf.png';
+    background-image: url('resources/index/leaf.png');
 }
 #img3 {
-    background-image: '../../resources/index/mac&cheese.png';
+    background-image: url('resources/index/mac&cheese.png');
 }
 #img4 {
-    background-image: '../../resources/index/pumpkin.png';
+    background-image: url('resources/index/pumpkin.png');
 }
 #img5 {
-    background-image: '../../resources/index/rolls.png';
+    background-image: url('resources/index/rolls.png');
 }
 #img6 {
-    background-image: '../../resources/index/santa.png';
+    background-image: url('resources/index/santa.png');
 }
 #img7 {
-    background-image: '../../resources/index/seeds.png';
+    background-image: url('resources/index/seeds.png');
 }
 #img8 {
-    background-image: '../../resources/index/tree.png';
+    background-image: url('resources/index/tree.png');
 }
 #img9 {
-    background-image: '../../resources/index/wind.png';
-}#img10 {
-    background-image: '../../resources/index/winter.png';
+    background-image: url('resources/index/wind.png');
+}
+#img10 {
+    background-image: url('resources/index/winter.png');
 }
