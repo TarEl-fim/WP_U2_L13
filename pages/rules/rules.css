@@ -11,13 +11,56 @@ body{
 }
 
 #rules {
-    height: 80vh;
-    width: 80vw;
-    border: 1vw solid #7FD8BE;
+    height: 200vh;
+    width: 90vw;
+    border: 0.5vw solid #7FD8BE;
     border-radius: 2.5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    font-size: 200%;
+    background-color: #cdffef;
+    
+}
+
+h1, p {
+    text-align: center;
+    background-color: #FCAB64;
+    border: 0.25vw solid #7FD8BE;
+    border-radius: 2.5vw;
+    width: 60vw;
+}
+#rulestext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 90%;
+    border: 0.25vw solid #7FD8BE;
+    border-radius: 2.5vw;
+    background-color: #FCAB64;
+    /*transform: ;*/
+
+}
+#matches {
+    display: flex;
+    height: 40%;
+    width: 95%;
+    background-color: #cdffef;
+    border: 0.25vw solid #7FD8BE;
+    border-radius: 2.5vw;
+    background-color: #FCAB64;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.matchimg {
+    height: 30vh;
+    width: 16vw;
+    border-radius: 2.5vw;
+    object-fit: cover;
 }
 
