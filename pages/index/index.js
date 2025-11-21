@@ -7,6 +7,19 @@
         </div> 
 ^^ card generation template ^^ X4*/
 
+const imgDICTInfo = {
+    'img1':'resources/index/general.png',
+    'img2':'resources/index/leaf.png',
+    'img3':'resources/index/mac&cheese.png',
+    'img4':'resources/index/pumpkin.png',
+    'img5':'resources/index/rolls.png',
+    'img6':'resources/index/santa.png',
+    'img7':'resources/index/seeds.png',
+    'img8':'resources/index/tree.png',
+    'img9':'resources/index/wind.png',
+    'img10':'resources/index/winter.png',
+}
+
 const imgChoices = [
     'img1','img1',
     'img2','img2',
@@ -33,7 +46,8 @@ function genBoard(){
 
 
             const card = document.createElement('div');
-            card.id = `${randomIMG}`;
+            //card.id = `${randomIMG}`;
+            card.style.backgroundImage = `url(${imgDICTInfo[randomIMG]})`;
             imgChoices.splice(imgChoices.indexOf(randomIMG), 1);
 
             card.className = 'card';
@@ -41,4 +55,7 @@ function genBoard(){
         }
         gameBoard.appendChild(invisiDIV);
     }
+}
+function flipCard(){
+    console.log('kys');
 }
