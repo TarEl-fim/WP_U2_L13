@@ -1,7 +1,21 @@
 class Player{
     constructor(){
         this.score = 0;
-        this.
+        this.wins = 0;
+        this.holdingCards = [];
+    }
+
+    flipCard(){
+        //kys
+    }
+    checkCard(){
+        //kys
+    }
+    addScore(){
+        //kys
+    }
+    addWin(){
+        //kys
     }
 }
 
@@ -18,7 +32,29 @@ const imgDICTInfo = {
     'img10':'resources/index/winter.png',
 }
 
-const imgChoices = [
+
+function main(){
+    Playing = true;
+    player1 = Player();
+    player2 = Player();
+    while(Playing == true){
+        genBoard();
+        player1.score = 0;
+        player2.score = 0;
+        flippingCards();
+    }
+}
+
+function flippingCards(){
+    imgLeft = ['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10',];
+    while (imgLeft.length > 0){
+        //kys
+    }
+}
+
+function genBoard(){
+
+    const imgChoices = [
     'img1','img1',
     'img2','img2',
     'img3','img3',
@@ -30,11 +66,6 @@ const imgChoices = [
     'img9','img9',
     'img10','img10'];
 
-function main(){
-    
-}
-
-function genBoard(){
     const gameBoard = document.getElementById('gameBoard');
 
     for (let i=0;i<4;i++){
@@ -51,13 +82,9 @@ function genBoard(){
             imgChoices.splice(imgChoices.indexOf(randomIMG), 1);
 
             card.className = 'card';
-            card.onclick = function(){flipCard()};
+            //card.onclick = function(){pullCard(this)};
             invisiDIV.appendChild(card);
         }
         gameBoard.appendChild(invisiDIV);
     }
-}
-
-function flipCard(){
-    
 }
