@@ -38,6 +38,7 @@ body{
 }
 
 #titleCard {
+    padding: 2.5vw;
     height: fit-content;
     width: 100%;
     display: flex;
@@ -46,3 +47,25 @@ body{
     align-items: center;
     background-color: #cdffef;
 }
+
+#buttonHolder {
+    margin-top: 5vh;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.xsButton {
+    height: 5vh;
+    width: 13vh;
+    font-size: 125%;
+    background-color: #975821;
+    border: 0.25vw solid #7FD8BE;
+    border-radius: 5vw;
+    justify-content: center;
+    text-align: center;
+}
+
