@@ -1,11 +1,9 @@
-/*<div class="invisi">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-        </div> 
-^^ card generation template ^^ X4*/
+class Player{
+    constructor(){
+        this.score = 0;
+        this.
+    }
+}
 
 const imgDICTInfo = {
     'img1':'resources/index/general.png',
@@ -32,6 +30,10 @@ const imgChoices = [
     'img9','img9',
     'img10','img10'];
 
+function main(){
+    
+}
+
 function genBoard(){
     const gameBoard = document.getElementById('gameBoard');
 
@@ -49,12 +51,13 @@ function genBoard(){
             imgChoices.splice(imgChoices.indexOf(randomIMG), 1);
 
             card.className = 'card';
-            card.onclick = function(){flipCard()}
+            card.onclick = function(){flipCard()};
             invisiDIV.appendChild(card);
         }
         gameBoard.appendChild(invisiDIV);
     }
 }
+
 function flipCard(){
     
 }
