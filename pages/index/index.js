@@ -42,20 +42,19 @@ function genBoard(){
         for (let j=0;j<5;j++){
             const randomNUM = Math.round((Math.random(0,imgChoices.length)*(imgChoices.length-1)));
             const randomIMG = imgChoices[randomNUM];
-            console.log(randomIMG);
-
 
             const card = document.createElement('div');
-            //card.id = `${randomIMG}`;
+            card.id = `${randomIMG}`;
             card.style.backgroundImage = `url(${imgDICTInfo[randomIMG]})`;
             imgChoices.splice(imgChoices.indexOf(randomIMG), 1);
 
             card.className = 'card';
+            card.onclick = function(){flipCard()}
             invisiDIV.appendChild(card);
         }
         gameBoard.appendChild(invisiDIV);
     }
 }
 function flipCard(){
-    console.log('kys');
+    
 }
