@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     background-color: #cdffef;
+    padding: 2.5%;
 }
 
 body{
@@ -38,7 +39,7 @@ body{
     background-color: #975821;
     border: 0.5vw solid #7FD8BE;
     border-radius: 2.5vw;
-    width: 60vw;
+    width: 90vw;
     }
     
 }
@@ -50,7 +51,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 25vh;
-    width: 90%;
+    width: 75%;
     border: 0.5vw solid #7FD8BE;
     border-radius: 2.5vw;
     background-color: #975821;
@@ -83,6 +84,75 @@ body{
     transition: transform 0.5s, box-shadow 0.5s;
 }
 .matchimg:hover {
-    transform: scale(1.15);
-    box-shadow: 0.125vw 0.25vw black;
+    transform: scale(1.05);
+    box-shadow: 0.125vw 0.125vw black;
+}
+
+
+.xsButton {
+    height: 5vh;
+    width: 13vh;
+    font-size: 125%;
+    background-color: #975821;
+    border: 0.25vw solid #7FD8BE;
+    border-radius: 5vw;
+    transition: transform 0.5s, background-color 0.5s;
+    p {
+        text-align: center;
+        font-size: x-large; 
+        margin: 0 auto; 
+        margin-top: 10%;
+    }
+}
+.xsButton:hover {
+    transform: scale(1.05);
+    background-color: #f9a051;
+}
+
+
+#buttonHolder {
+    
+  background-color: #cdffef;
+  border: 0.25vw solid #7FD8BE;
+  border-radius: 2.5vw;
+  height: 12vh;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  top: 1vh;
+  position: sticky;
+  
+}
+
+#holder {
+    display: flex;
+    flex-direction: row;
+    width: 45vw;
+}
+
+.xsButton {
+  height: 3vh;
+  width: 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+ 
+  text-align: center;
+  border: 0.115vw solid #07004D;
+  border-radius: 5vw;
+  background-color: #F3DFBF;
+  margin: 0 auto;
+  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out; 
+  p {
+    font-size: x-small;
+  }
+}
+
+
+.xsButton:hover {
+  transform: scale(1.05);
+  background-color: #f9a051;
+
 }
