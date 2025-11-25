@@ -1,21 +1,33 @@
 class Player{
-    constructor(){
+    constructor(name){
+        this.name = name;
         this.score = 0;
         this.wins = 0;
         this.holdingCards = [];
     }
 
-    flipCard(){
-        //kys
+    storeData(){
+        sessionStorage.setItem(this.name,[this.score,this.wins]);
+    }
+
+    flipCard(card){
+        this.holdingCards.append(card);
     }
     checkCard(){
-        //kys
+        if (this.holdingCards[0] = this.holdingCards[1]){
+            this.addScore();
+            this.holdingCards = [];
+            return true;
+        }else{
+            this.holdingCards = [];
+            return false;
+        }
     }
     addScore(){
-        //kys
+        this.score +=10;
     }
     addWin(){
-        //kys
+        this.wins +=1;
     }
 }
 
@@ -32,27 +44,56 @@ const imgDICTInfo = {
     'img10':'resources/index/winter.png',
 }
 
+//MAIN CODEvv
 
-function main(){
-    Playing = true;
-    player1 = Player();
-    player2 = Player();
-    while(Playing == true){
-        genBoard();
-        player1.score = 0;
-        player2.score = 0;
-        flippingCards();
-    }
+
+const player1 = new Player(1);
+const player2 = new Player(2);
+cardsLeft = ['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10'];
+let turn = 0;
+
+
+//MAIN CODE^^
+
+
+function resetBoard(){
+    cardsLeft = ['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10'];
+    turn = 0;
+    genBoard();
+    player1.score = 0;
+    player2.score = 0;
 }
 
-function flippingCards(){
-    imgLeft = ['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10',];
-    while (imgLeft.length > 0){
-        //kys
+
+function pullCard(card){
+    if (turn % 2 == 1){
+        playerNow = player1;
+    }else{
+        playerNow = player2;
     }
+    playerNow.holdingCards.append(card.id);
+    //put card into holding -- if holding == 2 check and delete
 }
 
 function genBoard(){
+    const body = document.getElementsByTagName('body')[0];
+
+    const board = document.getElementById('gameBoard');
+
+    body.removeChild(board);
+
+    const newBoard = document.createElement('div');
+
+    newBoard.id = 'gameBoard';
+
+    body.appendChild(newBoard);
+
+
+    const reset = document.createElement('button');
+    reset.id = 'reset'
+    reset.textContent = 'RESET GAME';
+    newBoard.appendChild(reset);
+    reset.onclick = function(){resetBoard()};
 
     const imgChoices = [
     'img1','img1',
@@ -66,8 +107,6 @@ function genBoard(){
     'img9','img9',
     'img10','img10'];
 
-    const gameBoard = document.getElementById('gameBoard');
-
     for (let i=0;i<4;i++){
         const invisiDIV = document.createElement('div');
         invisiDIV.className = 'invisi';
@@ -78,13 +117,12 @@ function genBoard(){
 
             const card = document.createElement('div');
             card.id = `${randomIMG}`;
-            card.style.backgroundImage = `url(${imgDICTInfo[randomIMG]})`;
             imgChoices.splice(imgChoices.indexOf(randomIMG), 1);
 
             card.className = 'card';
-            //card.onclick = function(){pullCard(this)};
+            card.onclick = function(){pullCard(this)};
             invisiDIV.appendChild(card);
         }
-        gameBoard.appendChild(invisiDIV);
+        newBoard.appendChild(invisiDIV);
     }
 }

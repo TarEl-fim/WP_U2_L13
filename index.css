@@ -32,9 +32,9 @@ body{
     width: 10vw;
     min-width: 10vw;
     margin: 2%;
-    border: 0.25vw solid #7FD8BE;
     border-radius: 2.5vw;
     background-position: center;
+    background-color: #e4a369;
 }
 
 #titleCard {
