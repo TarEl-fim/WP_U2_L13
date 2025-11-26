@@ -66,6 +66,7 @@ function resetBoard(){
 
 
 function pullCard(card){
+    card.style.backgroundImage = `url(${imgDICTInfo[card.id]})`
     if (turn % 2 == 1){
         playerNow = player1;
     }else{
@@ -73,6 +74,9 @@ function pullCard(card){
     }
     playerNow.holdingCards.append(card.id);
     //put card into holding -- if holding == 2 check and delete
+    if (playerNow.holdingCards == 2){
+        let point = playerNow.checkCard;
+    }
 }
 
 function genBoard(){

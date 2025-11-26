@@ -14,14 +14,18 @@ Memory Game-->
         <div id="titleCard">
             <h1>Cool Fall Matching Game</h1>
             <div id="buttonHolder">
-                <div class="xsButton" id="game"><p>Game</p></div>
-                <div class="xsButton" id="rules"><p>Rules</p></div>
-                <div class="xsButton" id="sdp"><p>SDP</p></div>
+                <div class="xsButton" id="game" onclick="location.href = 'index.html'"><p>Game</p></div>
+                <div class="xsButton" id="self" onclick="location.href = 'pages/rules/rules.html'"><p>Rules</p></div>
+                <div class="xsButton" id="sdp" onclick="location.href = 'pages/SDP/SDP/U2_Lab13_SDP.html'"><p>SDP</p></div>
             </div>
         </div>
         <div id="gameBoard">
             <button onclick="resetBoard()" id="reset">START GAME</button>
             
+        </div>
+        <div id="scoreHolder">
+            <div id="P1"></div>
+            <div id="P2"></div>
         </div>
         <script src="pages/index/index.js"></script>
     </body>
