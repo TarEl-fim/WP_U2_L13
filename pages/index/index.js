@@ -11,25 +11,44 @@ class Player{
     }
 
     resetHoldingCards(){
-        this.holdingCards.splice(0,1);
+        this.holdingCards[0].style.backgroundImage = null;
+        this.holdingCards[1].style.backgroundImage = null;
+        this.holdingCards[0].onclick = function(){pullCard(this)};
+        this.holdingCards[1].onclick = function(){pullCard(this)};
+        this.holdingCards = [];
     }
 
     flipCard(card){
-        if (this.holdingCards.length == 3){
-            this.holdingCards[0].style.backgroundImage = null;
-            this.holdingCards[1].style.backgroundImage = null;
-            this.resetHoldingCards();
-        }
         card.onclick = null;
         this.holdingCards.push(card);
     }
 
     checkCard(){
         console.log(this.holdingCards);
+        const cardsDeacivated = document.querySelectorAll('.card');
+        for (let i=0;i<cardsDeacivated.length;i++){
+            cardsDeacivated[i].onclick = null;
+        }
+
         if (this.holdingCards[0].id == this.holdingCards[1].id){
             this.addScore();
+            setTimeout(() => {
+            for (let i=0;i<cardsDeacivated.length;i++){
+            cardsDeacivated[i].onclick = function(){pullCard(this)};;
+            }
+            }, 1000);
+            this.holdingCards[0].onclick = null;
+            this.holdingCards[1].onclick = null;
+            this.holdingCards = [];
             return true;
         }else{
+            setTimeout(() => {
+            this.resetHoldingCards();
+
+            for (let i=0;i<cardsDeacivated.length;i++){
+            cardsDeacivated[i].onclick = function(){pullCard(this)};;
+            }
+            }, 1000);
             return false; 
         }
     }
@@ -79,15 +98,11 @@ function pullCard(card){
     card.style.backgroundImage = `url(${imgDICTInfo[card.id]})`
     if (turn % 2 == 1){
         playerNow = player1;
-        playerThen = player2;
     }else{
         playerNow = player2;
         playerThen = player1;
     }
     playerNow.flipCard(card);
-    //CHANGE LATER VV (FOR DEBUGGING PURPOSES)
-    playerThen.holdingCards = [];
-    playerThen.resetHoldingCards();
     //put card into holding -- if holding == 2 check and delete
     if (playerNow.holdingCards.length >= 2){
         let point = playerNow.checkCard();
