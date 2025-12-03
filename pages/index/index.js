@@ -10,21 +10,31 @@ class Player{
         sessionStorage.setItem(this.name,[this.score,this.wins]);
     }
 
-    flipCard(card){
-        this.holdingCards.append(card);
+    resetHoldingCards(){
+        this.holdingCards.splice(0,1);
     }
+
+    flipCard(card){
+        if (this.holdingCards.length == 3){
+            this.holdingCards[0].style.backgroundImage = null;
+            this.holdingCards[1].style.backgroundImage = null;
+            this.resetHoldingCards();
+        }
+        card.onclick = null;
+        this.holdingCards.push(card);
+    }
+
     checkCard(){
-        if (this.holdingCards[0] = this.holdingCards[1]){
+        console.log(this.holdingCards);
+        if (this.holdingCards[0].id == this.holdingCards[1].id){
             this.addScore();
-            this.holdingCards = [];
             return true;
         }else{
-            this.holdingCards = [];
-            return false;
+            return false; 
         }
     }
     addScore(){
-        this.score +=10;
+        this.score +=1;
     }
     addWin(){
         this.wins +=1;
@@ -69,13 +79,19 @@ function pullCard(card){
     card.style.backgroundImage = `url(${imgDICTInfo[card.id]})`
     if (turn % 2 == 1){
         playerNow = player1;
+        playerThen = player2;
     }else{
         playerNow = player2;
+        playerThen = player1;
     }
-    playerNow.holdingCards.append(card.id);
+    playerNow.flipCard(card);
+    //CHANGE LATER VV (FOR DEBUGGING PURPOSES)
+    playerThen.holdingCards = [];
+    playerThen.resetHoldingCards();
     //put card into holding -- if holding == 2 check and delete
-    if (playerNow.holdingCards == 2){
-        let point = playerNow.checkCard;
+    if (playerNow.holdingCards.length >= 2){
+        let point = playerNow.checkCard();
+        console.log(point);
     }
 }
 
