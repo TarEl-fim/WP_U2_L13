@@ -7,7 +7,7 @@ class Player{
     }
 
     storeData(){
-        sessionStorage.setItem(this.name,[this.score,this.wins]);
+        sessionStorage.setItem(this.name,this.wins);
     }
 
     resetHoldingCards(){
@@ -31,12 +31,16 @@ class Player{
         }
 
         if (this.holdingCards[0].id == this.holdingCards[1].id){
+            console.log('true')
             this.addScore();
             setTimeout(() => {
             for (let i=0;i<cardsDeacivated.length;i++){
             cardsDeacivated[i].onclick = function(){pullCard(this)};;
             }
             }, 1000);
+            let cardDeleter = this.holdingCards[0].id;
+            let cardLocation = cardsLeft.indexOf(cardDeleter);
+            cardsLeft.splice(cardLocation,1);
             this.holdingCards[0].onclick = null;
             this.holdingCards[1].onclick = null;
             this.holdingCards = [];
@@ -106,7 +110,20 @@ function pullCard(card){
     //put card into holding -- if holding == 2 check and delete
     if (playerNow.holdingCards.length >= 2){
         let point = playerNow.checkCard();
-        console.log(point);
+        console.log(playerNow.score);
+    }
+    console.log(cardsLeft);
+    if (cardsLeft.length == 0){
+        console.log('AAAAAAAAAAAAAAAAAAAA');
+        if (player1.score > player2.score){
+            //p1 wins
+            player1.addWin();
+            console.log(player1.wins);
+        }else if(player1.score == player2.score){
+            //tie = no points added
+        }else{
+            //p2 wins
+        }
     }
 }
 
