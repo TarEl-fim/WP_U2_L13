@@ -12,12 +12,15 @@ body{
 }
 
 #gameBoard{
-    width: 65.25vw;
+    width: 62.5vw;
     display: flex;
     flex-direction: column;
     background-color: #FCEFEF;
     border-radius: 2.5vw;
+    border-top-left-radius: 0.5;
+    border-top-right-radius: 0.5;
     margin: 2%;
+    
 
 }
 
@@ -45,7 +48,6 @@ body{
     justify-content: space-between;
     align-items: center;
     background-color: #cdffef;
-    padding: 2.5%;
 }
 
 #buttonHolder {
@@ -136,4 +138,52 @@ body{
   transform: scale(1.05);
   background-color: #f9a051;
 
+}
+
+#reset {
+    border: 0.115vw solid #07004D;
+    border-radius: 0.5vw;
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out; 
+
+}
+#reset:hover {
+  transform: scale(1.025, 1.05);
+  background-color: #f9a051;
+
+}
+#scoreHolder {
+    margin-top: 2.5vh;
+    height: 20vh;
+    width: 30vw;
+    border: 0.25vw solid #07004D;
+    border-radius: 0.5vw;
+    background-color: #F3DFBF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+#P1 {
+    height: 12vh;
+    width: 12vw;
+    border: 0.25vw solid #07004D;
+    border-radius: 0.5vw;
+    background-color: #7FD8BE;
+}
+
+#P2 {
+    height: 12vh;
+    width: 12vw;
+    border: 0.25vw solid #07004D;
+    border-radius: 0.5vw;
+    background-color: yellowgreen;
+}
+
+.miniBox {
+    width: 1.5vw;
+    border-bottom: 0.25vw solid #07004D;
+    border-right: 0.25vw solid #07004D;
+    border-radius: 0.05vw;
+    background-color: #cdffef;
 }
