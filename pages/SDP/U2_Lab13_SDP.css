@@ -1,0 +1,82 @@
+body{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #D0CD94;
+    width: 100%;
+}
+
+#buttonHolder {
+    
+    
+  background-color: #f9a051;
+  border: 0.25vw solid #241623;
+  border-radius: 2.5vw;
+  height: 12vh;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  align-items: center;
+  top: 1vh;
+  position: sticky;
+  
+}
+
+#holder {
+    display: flex;
+    flex-direction: row;
+    width: 45vw;
+}
+
+.xsButton {
+  height: 3vh;
+  width: 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  border: 0.115vw solid #241623;
+  border-radius: 5vw;
+  background-color: #F3DFBF;
+  margin: 0 auto;
+  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out; 
+  p {
+    font-size: x-small;
+  }
+}
+
+
+.xsButton:hover {
+  transform: scale(1.05);
+  background-color: #f7b57c;
+
+}
+
+#sdpText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1vh;
+    height: 75vh;
+    width: 90vw;
+    border: 0.5vw solid #241623;
+    border-radius: 2.5vw;
+    background-color: #3C787E;
+   
+}
+
+#sdpTextContent {
+    width: 90%;
+    min-height: 80%;
+    font-size: 250%;
+    border-radius: 2.5vw;
+    text-align: center;
+}
