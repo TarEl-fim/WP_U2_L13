@@ -104,6 +104,9 @@ body{
     border: 0.115vw solid #241623;
     border-radius: 0.5vw;
     transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out; 
+    margin: .02%;
+    width: 30%;
+    align-self: center;
 
 }
 #reset:hover {
