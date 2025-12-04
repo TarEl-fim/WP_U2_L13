@@ -7,7 +7,7 @@ body{
     justify-self: center;
     align-items: center;
     flex-direction: column;
-    background-color: #975821;
+    background-color: #D0CD94;
     width: 100%;
 }
 
@@ -47,7 +47,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #cdffef;
+    background-color: #D56F3E;
 }
 
 #buttonHolder {
@@ -95,8 +95,8 @@ body{
 
 #buttonHolder {
     
-  background-color: #cdffef;
-  border: 0.25vw solid #7FD8BE;
+  background-color: #f9a051;
+  border: 0.25vw solid #241623;
   border-radius: 2.5vw;
   height: 12vh;
   width: 45vw;
@@ -123,7 +123,7 @@ body{
   justify-content: center;
  
   text-align: center;
-  border: 0.115vw solid #07004D;
+  border: 0.115vw solid #241623;
   border-radius: 5vw;
   background-color: #F3DFBF;
   margin: 0 auto;
@@ -141,7 +141,7 @@ body{
 }
 
 #reset {
-    border: 0.115vw solid #07004D;
+    border: 0.115vw solid #241623;
     border-radius: 0.5vw;
     transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out; 
 
@@ -155,7 +155,7 @@ body{
     margin-top: 2.5vh;
     height: 20vh;
     width: 30vw;
-    border: 0.25vw solid #07004D;
+    border: 0.25vw solid #241623;
     border-radius: 0.5vw;
     background-color: #F3DFBF;
     display: flex;
@@ -167,23 +167,27 @@ body{
 #P1 {
     height: 12vh;
     width: 12vw;
-    border: 0.25vw solid #07004D;
+    border: 0.25vw solid #241623;
     border-radius: 0.5vw;
-    background-color: #7FD8BE;
+    background-color: #3C787E;
+    
+    justify-content: space-around;
+    align-items: center;
 }
 
 #P2 {
     height: 12vh;
     width: 12vw;
-    border: 0.25vw solid #07004D;
+    border: 0.25vw solid #241623;
     border-radius: 0.5vw;
-    background-color: yellowgreen;
+    background-color: #C7EF00;
 }
 
 .miniBox {
-    width: 1.5vw;
-    border-bottom: 0.25vw solid #07004D;
-    border-right: 0.25vw solid #07004D;
+    width: 12vw;
+    border-bottom: 0.25vw solid #241623;
     border-radius: 0.05vw;
     background-color: #cdffef;
+    justify-self: center;
+    text-align: center;
 }
