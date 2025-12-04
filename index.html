@@ -19,10 +19,21 @@ Memory Game-->
                 <div class="xsButton" id="sdp" onclick="location.href = 'pages/SDP/U2_Lab13_SDP.html'"><p>SDP</p></div>
                 </div>
             </div>
-            <div id="scoreHolder">
-            <div id="P1"><div class="miniBox">P1</div></div>
-            <div id="P2"><div class="miniBox">P2</div></div>
-        </div>
+            <div id="ScoreBox">
+                <div id="scoreHolder">
+                    <div id="P1">
+                        <div class="miniBox">P1</div>
+                        <p id="1Score">Player 1 Score: 0</p>
+                        <p id="1Wins">Player 1 Wins: 0</p>
+                    </div>
+                    <div id="P2">
+                        <div class="miniBox">P2</div>
+                        <p id="2Score">Player 2 Score: 0</p>
+                        <p id="2Wins">Player 2 Wins: 0</p>
+                    </div>
+                </div>
+                <h2 id='turn'>Player turn...</h2>
+            </div>
         <div id="gameBoard">
             <button onclick="resetBoard()" id="reset">START GAME</button>
             
