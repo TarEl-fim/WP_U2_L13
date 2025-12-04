@@ -41,6 +41,7 @@ class Player{
             let cardDeleter = this.holdingCards[0].id;
             let cardLocation = cardsLeft.indexOf(cardDeleter);
             cardsLeft.splice(cardLocation,1);
+
             this.holdingCards[0].onclick = null;
             this.holdingCards[1].onclick = null;
             this.holdingCards = [];
@@ -83,7 +84,7 @@ const imgDICTInfo = {
 const player1 = new Player(1);
 const player2 = new Player(2);
 cardsLeft = ['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10'];
-let turn = 0;
+let turn = 1;
 
 
 //MAIN CODE^^
@@ -91,10 +92,19 @@ let turn = 0;
 
 function resetBoard(){
     cardsLeft = ['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10'];
-    turn = 0;
+    turn = 1;
     genBoard();
+    const turnDisplay = document.getElementById('turn');
+    turnDisplay.textContent = "Player 1's turn";
     player1.score = 0;
     player2.score = 0;
+}
+
+function displayScores(){
+    const player1Score = document.getElementById('1Score');
+    const player2Score = document.getElementById('2Score');
+    player1Score.textContent = `Player 1 Score: ${player1.score}`;
+    player2Score.textContent = `Player 2 Score: ${player2.score}`;
 }
 
 
@@ -102,16 +112,22 @@ function pullCard(card){
     card.style.backgroundImage = `url(${imgDICTInfo[card.id]})`
     if (turn % 2 == 1){
         playerNow = player1;
+        next = player2;
     }else{
         playerNow = player2;
-        playerThen = player1;
+        next = player1;
     }
     playerNow.flipCard(card);
     //put card into holding -- if holding == 2 check and delete
     if (playerNow.holdingCards.length >= 2){
         let point = playerNow.checkCard();
-        console.log(playerNow.score);
+        if (point == false){
+            turn+=1;
+            const turnDisplay = document.getElementById('turn');
+            turnDisplay.textContent = `Player ${next.name}'s turn`; 
+        }
     }
+    displayScores()
     console.log(cardsLeft);
     if (cardsLeft.length == 0){
         console.log('AAAAAAAAAAAAAAAAAAAA');
@@ -122,7 +138,8 @@ function pullCard(card){
         }else if(player1.score == player2.score){
             //tie = no points added
         }else{
-            //p2 wins
+            player2.addWin();
+            console.log(player2.wins);
         }
     }
 }
@@ -131,6 +148,9 @@ function genBoard(){
     const body = document.getElementsByTagName('body')[0];
 
     const board = document.getElementById('gameBoard');
+
+    const turnDisplay = document.getElementById('turn');
+    turnDisplay.textContent = "Player 1's turn";
 
     body.removeChild(board);
 
