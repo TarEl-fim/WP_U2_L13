@@ -7,7 +7,13 @@ class Player{
     }
 
     storeData(){
-        sessionStorage.setItem(this.name,this.wins);
+        if (sessionStorage.length == 2){
+
+        }else{
+            sessionStorage.setItem(this.name,this.wins);
+        }
+        
+        console.log(sessionStorage);
     }
 
     resetHoldingCards(){
@@ -24,14 +30,12 @@ class Player{
     }
 
     checkCard(){
-        console.log(this.holdingCards);
         const cardsDeacivated = document.querySelectorAll('.card');
         for (let i=0;i<cardsDeacivated.length;i++){
             cardsDeacivated[i].onclick = null;
         }
 
         if (this.holdingCards[0].id == this.holdingCards[1].id){
-            console.log('true')
             this.addScore();
             setTimeout(() => {
             for (let i=0;i<cardsDeacivated.length;i++){
@@ -58,10 +62,10 @@ class Player{
         }
     }
     addScore(){
-        this.score +=1;
+        this.score += 1;
     }
     addWin(){
-        this.wins +=1;
+        this.wins += 1;
     }
 }
 
@@ -85,6 +89,7 @@ const player1 = new Player(1);
 const player2 = new Player(2);
 cardsLeft = ['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10'];
 let turn = 1;
+winDisplay();
 
 
 //MAIN CODE^^
@@ -95,6 +100,15 @@ function resetBoard(){
     turn = 1;
     genBoard();
 
+    winDisplay();
+
+    if (sessionStorage.length>0){
+        const player1Wins = document.getElementById('1Wins');
+        player1Wins.textContent = `Player 1 Wins: ${sessionStorage.getItem(1)}`;
+        const player2Wins = document.getElementById('2Wins');
+        player2Wins.textContent = `Player 2 Wins: ${sessionStorage.getItem(2)}`;
+    }
+
     const turnDisplay = document.getElementById('turn');
     turnDisplay.textContent = "Player 1's turn";
 
@@ -102,6 +116,15 @@ function resetBoard(){
     player2.score = 0;
 
     displayScores();
+}
+
+function winDisplay(){
+    if (sessionStorage.length>0){
+        const player1Wins = document.getElementById('1Wins');
+        player1Wins.textContent = `Player 1 Wins: ${sessionStorage.getItem(1)}`;
+        const player2Wins = document.getElementById('2Wins');
+        player2Wins.textContent = `Player 2 Wins: ${sessionStorage.getItem(2)}`;
+    }
 }
 
 function displayScores(){
@@ -133,9 +156,7 @@ function pullCard(card){
         }
     }
     displayScores()
-    console.log(cardsLeft);
     if (cardsLeft.length == 0){
-        console.log('AAAAAAAAAAAAAAAAAAAA');
         if (player1.score > player2.score){
             //p1 wins
             player1.addWin();
