@@ -7,13 +7,8 @@ class Player{
     }
 
     storeData(){
-        if (sessionStorage.length == 2){
 
-        }else{
-            sessionStorage.setItem(this.name,this.wins);
-        }
-        
-        console.log(sessionStorage);
+        sessionStorage.setItem(this.name,Number(this.wins));
     }
 
     resetHoldingCards(){
@@ -50,7 +45,9 @@ class Player{
             this.holdingCards[1].onclick = null;
             this.holdingCards = [];
             return true;
+
         }else{
+
             setTimeout(() => {
             this.resetHoldingCards();
 
@@ -160,22 +157,29 @@ function pullCard(card){
         if (player1.score > player2.score){
             //p1 wins
             player1.addWin();
+            
             const player1Wins = document.getElementById('1Wins');
             player1Wins.textContent = `Player 1 Wins: ${player1.wins}`;
             turnDisplay.textContent = "Player 1 Wins!";
+
             player1.storeData();
             player2.storeData();
+
         }else if(player1.score == player2.score){
             //tie
             turnDisplay.textContent = "It's a tie!";
+
             player1.storeData();
             player2.storeData();
+
         }else{
             //p2 wins
             player2.addWin();
+            
             const player2Wins = document.getElementById('2Wins');
             player2Wins.textContent = `Player 2 Wins: ${player2.wins}`;
             turnDisplay.textContent = 'Player 2 Wins!';
+
             player1.storeData();
             player2.storeData();
         }
