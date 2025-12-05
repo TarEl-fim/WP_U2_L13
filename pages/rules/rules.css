@@ -25,7 +25,7 @@ body{
     margin-top: 1vh;
     h1, p {
         text-align: center;
-        background-color: #3C787E;
+        background-color: #60afb6;
         border: 0.5vw solid #241623;
         border-radius: 2.5vw;
         width: 90vw;
@@ -43,7 +43,7 @@ body{
     width: 75%;
     border: 0.5vw solid #241623;
     border-radius: 2.5vw;
-    background-color: #3C787E;
+    background-color: #60afb6;
 
 }
 #matches {
@@ -53,7 +53,7 @@ body{
     background-color: #cdffef;
     border: 0.5vw solid #241623;
     border-radius: 2.5vw;
-    background-color: #3C787E;
+    background-color: #60afb6;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;

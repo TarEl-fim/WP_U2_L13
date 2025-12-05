@@ -69,14 +69,14 @@ body{
     width: 90vw;
     border: 0.5vw solid #241623;
     border-radius: 2.5vw;
-    background-color: #3C787E;
+    background-color: #60afb6;
    
 }
 
 #sdpTextContent {
     width: 90%;
     min-height: 80%;
-    font-size: 250%;
+    font-size: 450%;
     border-radius: 2.5vw;
     text-align: center;
 }
