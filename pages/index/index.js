@@ -94,10 +94,14 @@ function resetBoard(){
     cardsLeft = ['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10'];
     turn = 1;
     genBoard();
+
     const turnDisplay = document.getElementById('turn');
     turnDisplay.textContent = "Player 1's turn";
+
     player1.score = 0;
     player2.score = 0;
+
+    displayScores();
 }
 
 function displayScores(){
@@ -118,12 +122,13 @@ function pullCard(card){
         next = player1;
     }
     playerNow.flipCard(card);
+    const turnDisplay = document.getElementById('turn');
     //put card into holding -- if holding == 2 check and delete
     if (playerNow.holdingCards.length >= 2){
         let point = playerNow.checkCard();
         if (point == false){
             turn+=1;
-            const turnDisplay = document.getElementById('turn');
+            
             turnDisplay.textContent = `Player ${next.name}'s turn`; 
         }
     }
@@ -134,15 +139,29 @@ function pullCard(card){
         if (player1.score > player2.score){
             //p1 wins
             player1.addWin();
-            console.log(player1.wins);
+            const player1Wins = document.getElementById('1Wins');
+            player1Wins.textContent = `Player 1 Wins: ${player1.wins}`;
+            turnDisplay.textContent = "Player 1 Wins!";
+            player1.storeData();
+            player2.storeData();
         }else if(player1.score == player2.score){
-            //tie = no points added
+            //tie
+            turnDisplay.textContent = "It's a tie!";
+            player1.storeData();
+            player2.storeData();
         }else{
+            //p2 wins
             player2.addWin();
-            console.log(player2.wins);
+            const player2Wins = document.getElementById('2Wins');
+            player2Wins.textContent = `Player 2 Wins: ${player2.wins}`;
+            turnDisplay.textContent = 'Player 2 Wins!';
+            player1.storeData();
+            player2.storeData();
         }
     }
 }
+
+//BOARD GENERATION vv
 
 function genBoard(){
     const body = document.getElementsByTagName('body')[0];
